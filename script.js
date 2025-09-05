@@ -37,13 +37,14 @@ function fetchImage(date) {
 
 function displayImage(data, date) {
   currentImageContainer.innerHTML = `
-    <h2>${data.title} (${date})</h2>
-    <p>${data.explanation}</p>
+    
     ${
       data.media_type === "image"
         ? `<img src="${data.url}" alt="${data.title}" style="max-width:100%; border-radius:10px; margin-left:40px; padding-bottom:20px;">`
         : `<iframe src="${data.url}" width="100%" height="400px" style="border-radius:10px;"></iframe>`
     }
+        <h2>${data.title} (${date})</h2>
+    <p>${data.explanation}</p>
   `;
 }
 
